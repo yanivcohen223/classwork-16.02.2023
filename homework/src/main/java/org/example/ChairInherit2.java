@@ -12,9 +12,9 @@ public class ChairInherit2 extends Chair {
     public int discountAmount;
 
 
-    public ChairInherit2(boolean isAllowAdjustments, boolean isSpinning, boolean hasDiscount, int discountAmount) {
-        this("regular", 4, 45.2f, isAllowAdjustments,
-                isSpinning, hasDiscount, discountAmount);
+    public ChairInherit2(String model, int number_of_legs, float price) {
+        this(model, number_of_legs, price, false,
+                true, false, 0);
     }
 
     public ChairInherit2(String model, int number_of_legs, float price, boolean isAllowAdjustments,
@@ -28,9 +28,9 @@ public class ChairInherit2 extends Chair {
 
     @Override
     public String printChair() {
-        return "ChairInherit1{" +
+        return "ChairInherit2{ " +
                 super.printChair() +
-                "isAllowAdjustments= " + isAllowAdjustments +
+                ", isAllowAdjustments= " + isAllowAdjustments +
                 ", isSpinning= " + isSpinning +
                 ", hasDiscount= " + hasDiscount +
                 ", discountAmount= " + discountAmount + "%" +
