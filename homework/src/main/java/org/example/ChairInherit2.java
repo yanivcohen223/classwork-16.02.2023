@@ -27,19 +27,15 @@ public class ChairInherit2 extends Chair {
     }
 
     @Override
-    public String printChair() {
-        return "ChairInherit2{ " +
-                super.printChair() +
-                ", isAllowAdjustments= " + isAllowAdjustments +
-                ", isSpinning= " + isSpinning +
-                ", hasDiscount= " + hasDiscount +
-                ", discountAmount= " + discountAmount + "%" +
-                '}';
+    public void printChair() {
+        super.printChair();
+        System.out.format(" isAllowAdjustments: %b, isSpinning= %b, hasDiscount= %b, discountAmount= %d",
+            this.isAllowAdjustments, this.isSpinning, this.hasDiscount, this.discountAmount);
     }
 
     @Override
     public String calculatePrice(int numberOfChairs) {
-        float price = numberOfChairs * this.price;
+        float price = numberOfChairs * this.getPrice();
         if (hasDiscount) {
             float newPrice = (price / 100) * discountAmount;
             return "for " + numberOfChairs +

@@ -6,9 +6,9 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Chair {
-    public String model;
-    public int number_of_legs;
-    public float price;
+    private String model;
+    private int number_of_legs;
+    private float price;
 
     public Chair(String model, int number_of_legs, float price) {
         this.model = model;
@@ -16,8 +16,8 @@ public class Chair {
         this.price = price;
     }
 
-    public String calculatePrice(int numberOfChairs){
-        float price = numberOfChairs *this.price;
+    public String calculatePrice(int numberOfChairs) {
+        float price = numberOfChairs * this.price;
         return "for " + numberOfChairs +
                 " chairs the price is: " + price + " $";
     }
@@ -46,11 +46,8 @@ public class Chair {
         this.price = price;
     }
 
-    public String printChair() {
-        return "Chair{" +
-                "model='" + model + '\'' +
-                ", number_of_legs=" + number_of_legs +
-                ", price=" + price + "$" +
-                '}';
+    public void printChair() {
+        System.out.format("Chair: %s have %d legs cost %f", this.model, this.number_of_legs, this.price);
     }
-}
+   }
+
